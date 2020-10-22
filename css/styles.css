@@ -1,25 +1,3 @@
-/* палитра текста: 
-webstudio color: #2196F3 background: 33,150,243,1;
-menu nav background: 33,33,33,1; #212121
-menu nav acent color: #2196F3 background: 33,150,243,1;
-tel & e-mail color: #757575 background: 117,117,117,1;
-e-mail hover color: #2196F3; background: 33,150,243,1;
-шапка текст color: #FFFFFF; background: 255,255,255,1;
-button текст  color: #FFFFFF; background: 255,255,255,1;
-feature h color: #212121; background: 33,33,33,1;
-feature p color: #757575 background: 117,117,117,1;
-footer tel & e-mail color: rgba(255, 255, 255, 0.6);
-footer address color: #FFFFFF; background: 255,255,255,1;
-*/
-
-/* палитра фона:
- top line bg: rgba(255,255,255,1) background: #FFFFFF; 
- шапка background: #2F303A; background: 47,48,58,1;
- button color: #2196F3 background: 33,150,243,1;
- button hover background: #188CE8; background: 24,140,232,1;
- our team background: #F5F4FA; background: 245,244,250,1;
- footer background: #2F303A; background: 47,48,58,1;
- */
 :root {
   --primary-text-color: #212121;
   --second-text-color: #757575;
@@ -502,10 +480,17 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+  outline: none;
+  color: black;
+  padding-left: 16px;
+}
+
+.footer-input:focus {
+  color: #212121;
 }
 
 .footer-form-email input::placeholder {
-  padding: 15px 16px;
+  /* padding: 15px 16px; */
   font-family: Roboto;
   font-size: 16px;
   line-height: 1.25;
@@ -1188,6 +1173,7 @@ body {
   width: 448px;
   height: 40px;
   padding: 0px;
+  padding-left: 42px;
   margin: 0px;
   margin-bottom: 10px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -1203,6 +1189,8 @@ body {
   width: 448px;
   height: 120px;
   resize: none;
+  padding-top: 16px;
+  padding-left: 16px;
 }
 
 .form-modal-field-contacts:hover input,
@@ -1220,8 +1208,6 @@ body {
   line-height: 1.1429;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
-  padding-top: 12px;
-  padding-left: 16px;
 }
 
 .icon-person-black-18dp,
@@ -1248,6 +1234,12 @@ body {
 .form-modal-field-contacts:focus .icon-email-black-18dp,
 .form-modal-field-contacts:active .icon-email-black-18dp {
   fill: var(--acent-logo-color);
+}
+
+.form-modal-input:focus {
+  color: var(--second-text-color);
+  outline: none;
+  padding-left: 42px;
 }
 
 .form-modal-button {
@@ -1280,12 +1272,27 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--second-text-color);
+  position: relative;
+}
+
+.form-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+.form-checkbox-label::before {
+  content: " ";
+  width: 16px;
+  height: 15px;
+  border: 0.2px solid orchid;
+  position: absolute;
+  left: 5px;
+  top: 15px;
 }
 
 .form-modal-policy .link {
   color: var(--acent-logo-color);
   text-decoration: underline;
-
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
